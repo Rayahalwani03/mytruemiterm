@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mytruemiterm.MainPage">
+
+
+    <StackLayout>
+
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Name" Grid.Row="0" Grid.Column="0" WidthRequest="200"/>
+                <Entry x:Name="nname"   Grid.Row="1" Grid.Column="0" WidthRequest="200" />
+
+                <Label Text="Last Name"  Grid.Row="0" Grid.Column="1" WidthRequest="200"/>
+                <Entry x:Name="lastname"  Grid.Row="1" Grid.Column="1" WidthRequest="200" />
+            </Grid>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Birth Date"/>
+            <Entry x:Name="Month" Placeholder="month"/>
+            <Entry x:Name="Day" Placeholder="day"/>
+            <Entry x:Name="Year" Placeholder="year"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <RadioButton x:Name="MaleBtn" Content="Male" />
+            <RadioButton x:Name="FemaleBtn" Content="Female"  />
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" >
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Team:" VerticalOptions="Center" Grid.Row="1" Grid.Column="0"/>
+
+
+                <Image Source="football.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center" Grid.Row="0" Grid.Column="2"/>
+                <CheckBox x:Name="footballCB" VerticalOptions="Center" Grid.Row="1" Grid.Column="2"/>
+
+                <Image Source="boat.jpg" HeightRequest="50" WidthRequest="50" VerticalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+                <CheckBox x:Name="boatCB" VerticalOptions="Center" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+
+
+
+        <StackLayout BackgroundColor="Green">
+            <Frame BorderColor="Black"
+                   CornerRadius="5" 
+                   Padding="0"
+                   WidthRequest="300">
+
+                <Button x:Name="ADD"
+                FontAttributes="Bold" 
+                Text="ADD" 
+                TextColor="Black" 
+                BackgroundColor="White" 
+                WidthRequest="200"
+                Clicked="ADD_Clicked"
+                        />
+
+            </Frame>
+        </StackLayout>
+
+
+
+
+
+        <StackLayout>
+            <Label Text="Child's List:" />
+
+            <ListView x:Name="Child_List_View">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                            <Label Text="{Binding Name}" />
+                            <Label Text="{Binding LastName}" />
+                            <Label Text="{Binding DOB_Day}" />
+                            <Label Text="{Binding DOB_Month}" />
+                            <Label Text="{Binding DOB_Year}" />
+                            <Label Text="{Binding Gender}" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+
+        <StackLayout BackgroundColor="Green">
+            <Frame BorderColor="Black"
+                   CornerRadius="5" 
+                   Padding="0"
+                   WidthRequest="300">
+
+                <Button 
+                    x:Name="SHOW"
+                FontAttributes="Bold" 
+                Text="SHOW" 
+                TextColor="Black" 
+                BackgroundColor="White" 
+                WidthRequest="200"
+                    Clicked="SHOW_Clicked"
+                    />
+
+            </Frame>
+        </StackLayout>
+
+
+
+
+
+    </StackLayout>
+    
+
+</ContentPage>
