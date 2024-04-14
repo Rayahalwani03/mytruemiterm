@@ -15,14 +15,6 @@ namespace mytruemiterm
         private void ADD_Clicked(object sender, EventArgs e)
         {
 
- 
-
-        }
-
-        private void SHOW_Clicked(object sender, EventArgs e)
-        {
-
-
             string gender = MaleBtn.IsChecked ? MaleBtn.Content.ToString() : FemaleBtn.Content.ToString();
 
             child.Add(new ChildClass(
@@ -36,6 +28,14 @@ namespace mytruemiterm
 
             Child_List_View.ItemsSource = null;
             Child_List_View.ItemsSource = child;
+
+        }
+
+        private void SHOW_Clicked(object sender, EventArgs e)
+        {
+
+
+
         }
 
 

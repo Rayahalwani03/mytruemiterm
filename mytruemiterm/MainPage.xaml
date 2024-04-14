@@ -92,13 +92,16 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding LastName}" />
+                                <Label Text="{Binding DOB_Day}" />
+                                <Label Text="{Binding DOB_Month}" />
+                                <Label Text="{Binding DOB_Year}" />
+                                <Label Text="{Binding Gender}" />
+                            </StackLayout>
                             
-                            <Label Text="{Binding Name}" />
-                            <Label Text="{Binding LastName}" />
-                            <Label Text="{Binding DOB_Day}" />
-                            <Label Text="{Binding DOB_Month}" />
-                            <Label Text="{Binding DOB_Year}" />
-                            <Label Text="{Binding Gender}" />
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
